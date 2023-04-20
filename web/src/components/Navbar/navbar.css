@@ -1,0 +1,153 @@
+.container {
+  background-color: #ffffff;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline;
+}
+
+.nav li {
+  color: #979797;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.link-to {
+  color: #927474;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link-to:hover {
+  color: #ea1951;
+  /* border-bottom: 3px solid #ea1951; */
+}
+
+.link-to:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 100%;
+  background: transparent;
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+}
+
+.logo {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.buttonContact {
+  font-weight: bold;
+  background-color: #ea1951;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 32px;
+  border: #ea1951;
+}
+
+.buttonContact:hover {
+  background-color: #afa7a7;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li.sub-menu {
+  display: inline-block;
+}
+
+.sub-menu-konten {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 5;
+}
+
+.sub-menu-konten a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.sub-menu-konten a:hover {
+  background-color: #f1f1f1;
+}
+
+.sub-menu:hover .sub-menu-konten {
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 90%;
+    padding-left: 10px;
+  }
+
+  .nav ul li {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .span-icon {
+    display: none;
+  }
+
+  .logo {
+    left: 70;
+  }
+}
+
+.span-icon span {
+  justify-content: end;
+  background: rgb(12, 12, 12);
+  width: 20px;
+  height: 4px;
+  margin: 2px;
+  display: block;
+  border-radius: 3px;
+}

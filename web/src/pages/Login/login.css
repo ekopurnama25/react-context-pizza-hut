@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rounded-input {
+  margin: 10px;
+  padding: 15px 20px;
+  width: 60%;
+  border: 1px solid rgb(15, 149, 233);
+  border-radius: 10px;
+}
+
+.buttonlanding {
+  font-weight: bold;
+  background-color: #f60404;
+  color: #ffffff;
+  padding: 15px 24px;
+  border-radius: 10px;
+  border: #f60404;
+}
+
+.buttonlanding:hover {
+  background-color: #d72d2d;
+}
