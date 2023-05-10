@@ -12,19 +12,6 @@ export const AuthProvider = ({ children }) => {
       : null
   );
 
-  //console.log(user);
-  // const loginUsers = async ({ e, data }) => {
-  //   e.preventDefault();
-  //   try {
-  //     const req = await axiosInstance.post("/auth/", data);
-
-  //     localStorage.setItem("userToken", req);
-  //     return req;
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   let contextData = {
     user: user,
     setUser: setUser,

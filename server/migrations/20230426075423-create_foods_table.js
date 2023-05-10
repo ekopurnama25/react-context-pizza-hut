@@ -3,43 +3,34 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    queryInterface.createTable("recruitmen", {
-      id_recruitmen: {
+    queryInterface.createTable("foods", {
+      id_foods: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
       },
-      nama_lengkap: {
+      jenis_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-
-      pendidikan: {
+      qty: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      jenis_kelamin: {
+      harga_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      usia: {
+      desc_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      no_wa: {
+      url: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      hobi: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      tujuan_bergabung: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      alamat: {
+      images: {
         type: DataTypes.STRING,
         allowNull: true,
       },
@@ -49,6 +40,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    queryInterface.dropTable("recruitmen");
+    queryInterface.dropTable("foods");
   },
 };

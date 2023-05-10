@@ -1,7 +1,7 @@
 ("use strict");
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Recruitmen extends Model {
+  class Foods extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -15,51 +15,43 @@ module.exports = (sequelize, DataTypes) => {
       // });
     }
   }
-  Recruitmen.init(
+  Foods.init(
     {
-      id_recruitmen: {
+      id_foods: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
       },
-      nama_lengkap: {
+      jenis_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      pendidikan: {
+      qty: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      jenis_kelamin: {
+      harga_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      usia: {
+      desc_pizza: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      no_wa: {
+      url: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      hobi: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      tujuan_bergabung: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      alamat: {
+      images: {
         type: DataTypes.STRING,
         allowNull: true,
       },
     },
     {
       sequelize,
-      modelName: "Recruitmen",
+      modelName: "Foods",
     }
   );
-  return Recruitmen;
+  return Foods;
 };

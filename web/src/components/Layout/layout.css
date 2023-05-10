@@ -1,0 +1,49 @@
+.left {
+  margin-top: 3.9%;
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  background-color: #375a5a;
+  float: left;
+}
+.right {
+  width: 85%;
+  background-color: #ffffff;
+  float: left;
+  margin-left: 15%;
+  font-size: 28px;
+
+  padding: 0px 10px;
+  margin-top: 4%;
+}
+
+.footer {
+  height: 100px;
+  border: 1px solid #5e2f64;
+  line-height: 100px;
+}
+
+.link-menu .lmenu {
+  padding: 8px 12px 8px 16px;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.isi-dropdown a:hover {
+  color: #fff !important;
+}
+.link-menu .lmenu:hover {
+  color: #f1f1f1;
+}
+
+.link-menu {
+  display: inline;
+}

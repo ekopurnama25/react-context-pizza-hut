@@ -7,12 +7,9 @@ const PrivateRoute = ({ children, allowRoles }) => {
 
   const userHasRequired =
     user && allowRoles.includes(user?.roles) ? true : false;
-
   console.log(userHasRequired);
-  if (user && !userHasRequired) {
-    return <Navigate to="/login" />;
-  }
 
+  if (user && !userHasRequired) return <Navigate to="/login" />;
   return children;
 };
 

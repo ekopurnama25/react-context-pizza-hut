@@ -7,8 +7,8 @@ const HomePages = () => {
   return (
     <>
       <Navbar />
-      <div class="row">
-        <div class="column">
+      <div className="row">
+        <div className="column">
           <div style={{ textAlign: "center", marginTop: "12%" }}>
             <p
               style={{
@@ -59,7 +59,7 @@ const HomePages = () => {
             </div>
           </div>
         </div>
-        <div class="column">
+        <div className="column">
           <div style={{ textAlign: "center", margin: "35px" }}>
             <img src={LogoPages} width="550" height="500" alt="" />
           </div>

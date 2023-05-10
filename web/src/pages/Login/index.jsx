@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import AuthContext from "../../context/AuthContext";
 import { authUsers } from "../../service/auth";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
@@ -8,7 +7,6 @@ import LogoLogin from "../../images/lplplp.jpg";
 
 const LoginPages = () => {
   const [authtication, setAuthtication] = useState({});
-  //const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -21,11 +19,8 @@ const LoginPages = () => {
     try {
       //console.log(authtication);
       const res = await authUsers(authtication);
-      if (res) {
-        navigate("/users");
-      } else {
-        navigate("/login");
-      }
+      if (res) return navigate("/users");
+      return navigate("/login");
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -33,8 +28,8 @@ const LoginPages = () => {
   };
   return (
     <>
-      <div class="row">
-        <div class="column">
+      <div className="row">
+        <div className="column">
           <div style={{ textAlign: "center", marginTop: "12%" }}>
             <div style={{ textAlign: "center", margin: "35px" }}>
               <img src={LogoLogin} width="600" height="400" alt="" />
@@ -52,7 +47,7 @@ const LoginPages = () => {
             </div>
           </div>
         </div>
-        <div class="column">
+        <div className="column">
           <div style={{ textAlign: "center", marginTop: "28%" }}>
             <div style={{ textAlign: "center", margin: "35px" }}>
               <div style={{ marginRight: "49%" }}>

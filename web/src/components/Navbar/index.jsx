@@ -5,7 +5,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="container">
+    <div className="containers">
       <div className="nav">
         <div className="span-icon">
           <span></span>
