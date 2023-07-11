@@ -1,4 +1,6 @@
 const { Foods } = require("../models");
+const fs = require("fs");
+
 exports.addfoods = async (req, res, next) => {
   try {
     const url = req.protocol + "://" + req.get("host");
@@ -13,7 +15,10 @@ exports.addfoods = async (req, res, next) => {
     };
 
     await Foods.create(foods);
-    console.log(foods);
+    res.status(200).json({
+      status: "true",
+      data: foods,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -24,6 +29,46 @@ exports.getFoods = async (req, res) => {
     await Foods.findAll().then((foods) =>
       res.status(200).json({ message: "true", data: foods })
     );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.getFoodsPublic = async (req, res) => {
+  try {
+    await Foods.findAll().then((foods) =>
+      res.status(200).json({ message: "true", data: foods })
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.DeleteFoods = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const checkImg = await Foods.findOne({
+      where: { id_foods: id },
+    });
+    if (checkImg) {
+      filepath = `./file/${checkImg.images}`;
+      fs.unlinkSync(filepath);
+      const deleteFoods = await Foods.destroy({
+        where: { id_foods: checkImg.id_foods },
+      });
+      res.status(200).json({
+        status: true,
+        message: "delete successfully data foods",
+        id: deleteFoods.id_foods,
+      });
+    } else {
+      res.status(400).json({
+        status: true,
+        id: "Failed Delete",
+      });
+    }
+
+    //console.log(id);
   } catch (error) {
     console.log(error);
   }

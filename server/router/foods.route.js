@@ -32,4 +32,8 @@ router.post(
 
 router.get("/", authorization.verify, foodService.getFoods);
 
+router.get("/public/", foodService.getFoodsPublic);
+
+router.delete("/:id", authorization.verify, foodService.DeleteFoods);
+
 module.exports = router;

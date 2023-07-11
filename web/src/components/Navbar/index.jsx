@@ -22,7 +22,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="link-to">Menu</Link>
+            <Link className="link-to" to="/menupublic">
+              Menu
+            </Link>
           </li>
           <li>
             <Link className="link-to">About</Link>

@@ -11,7 +11,7 @@ export const authUsers = async (data) => {
 };
 
 export const CheckUsers = async (data) => {
-  console.log(data);
+  //console.log(data);
   try {
     const req = await axiosInstance.post("/auth/home/", data);
     console.log(req);

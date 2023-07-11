@@ -2,12 +2,13 @@ import React, { useContext, useState } from "react";
 import Layouts from "../../components/Layout/Layout";
 import AuthContext from "../../context/AuthContext";
 import "./menu.css";
-import { Link } from "react-router-dom";
+//import { Navigate } from "react-router-dom";
 import { addMenuPizzas } from "../../service/menu";
-
+import { useNavigate } from "react-router-dom";
 const AddMenuUsersPages = () => {
+  const navigate = useNavigate();
   const [menupizza, setMenuPizza] = useState({});
-  const [images, setImages] = useState(null);
+  const [images, setImages] = useState([]);
   const [progress, setProgess] = useState(0);
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -15,6 +16,7 @@ const AddMenuUsersPages = () => {
   };
 
   const onFileChange = (e) => {
+    //let file = e.target.files[0];
     setImages(e.target.files[0]);
   };
 
@@ -22,6 +24,9 @@ const AddMenuUsersPages = () => {
     e.preventDefault();
     try {
       const formData = new FormData();
+      // images.forEach((file) => {
+      //   formData.append("images", file);
+      // });
       formData.append("images", images);
       formData.append("jenis_pizza", menupizza.jenis_pizza);
       formData.append("qty", menupizza.qty);
@@ -29,7 +34,12 @@ const AddMenuUsersPages = () => {
       //formData.append("images", menupizza.images);
       formData.append("desc_pizza", menupizza.desc_pizza);
       const res = await addMenuPizzas(formData);
-      console.log("hasil", res);
+      //return <Navigate to="/menu" replace={true} />;
+      if (res) {
+        navigate("/Menu");
+      } else {
+        console.log("failed");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +47,9 @@ const AddMenuUsersPages = () => {
   return (
     <Layouts title="AddMenu">
       <div className="FormMenus">
-        <h6 style={{ fontFamily: "monospace" }}>Add Menu Pizza</h6>
+        <h6 style={{ fontFamily: "monospace", fontSize: "24px" }}>
+          Add Menu Pizza
+        </h6>
         <form onSubmit={handleAddMenuPIzza}>
           <div>
             <input
@@ -76,8 +88,9 @@ const AddMenuUsersPages = () => {
               placeholder="Foto Pizza"
               name="images"
               multiple
+              accept="image/*"
               onChange={onFileChange}
-              // value={menupizza.images}
+              //value={menupizza?.images}
             />
           </div>
           <div>
