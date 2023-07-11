@@ -59,7 +59,7 @@ exports.DeleteFoods = async (req, res) => {
       res.status(200).json({
         status: true,
         message: "delete successfully data foods",
-        id: deleteFoods.id_foods,
+        id: id,
       });
     } else {
       res.status(400).json({

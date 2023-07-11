@@ -22,16 +22,9 @@ const MenuUsersPages = () => {
   const DeleteFoods = async (id) => {
     //e.preventDefault();
     try {
-      const Foodsdelete = await DeleteIdFoods(id);
-
-      //const getAllPizza = await GetAllPizzas();
-      setPizzaHot(
-        pizza.filter((pizz) => {
-          console.log(pizz.id);
-
-          return pizz.id_foods === id;
-        })
-      );
+      await DeleteIdFoods(id);
+      const dele = setPizzaHot(pizza?.data?.data?.filter((x) => x.id !== id));
+      console.log(dele);
     } catch (error) {
       console.log(error);
     }
