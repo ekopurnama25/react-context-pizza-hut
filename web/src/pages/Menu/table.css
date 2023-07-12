@@ -1,19 +1,19 @@
-.table {
+.tableMenu {
   border-collapse: collapse;
   width: 100%;
 }
 
-.table th,
+.tableMenu th,
 td {
   text-align: left;
   padding: 8px;
 }
 
-.table tr:nth-child(even) {
+.tableMenu tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.table th {
+.tableMenu th {
   background-color: #04aa6d;
   color: white;
 }

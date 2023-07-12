@@ -18,7 +18,7 @@ export const GetAllPizzas = async () => {
   try {
     const req = await axiosInstance.get("/foods/");
     console.log("req", req);
-    return req;
+    return req.data.data;
   } catch (err) {
     console.log(err);
   }
@@ -36,7 +36,7 @@ export const GetAllPizzasPublic = async () => {
 export const DeleteIdFoods = async (id) => {
   try {
     const req = await axiosInstance.delete(`/foods/${id}`);
-    console.log(req);
+    return req;
   } catch (error) {
     console.log(error);
   }

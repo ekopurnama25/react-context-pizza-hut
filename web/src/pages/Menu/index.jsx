@@ -22,9 +22,13 @@ const MenuUsersPages = () => {
   const DeleteFoods = async (id) => {
     //e.preventDefault();
     try {
+      console.log(pizza?.data?.data);
       await DeleteIdFoods(id);
-      const dele = setPizzaHot(pizza?.data?.data?.filter((x) => x.id !== id));
-      console.log(dele);
+      const delFoooods = pizza.filter((x) => {
+        return x.id_foods !== id;
+      });
+      console.log(delFoooods);
+      setPizzaHot(delFoooods);
     } catch (error) {
       console.log(error);
     }
@@ -38,8 +42,7 @@ const MenuUsersPages = () => {
         </Link>
       </div>
       <div style={{ margin: "3%" }}>
-        <table className="table">
-          {" "}
+        <table className="tableMenu">
           <thead>
             <tr>
               <th>No</th>
@@ -53,7 +56,7 @@ const MenuUsersPages = () => {
           </thead>
           <tbody>
             {pizza &&
-              pizza?.data?.data?.map((pizz, index) => {
+              pizza.map((pizz, index) => {
                 return (
                   <tr key={pizz.id_foods}>
                     <td>{index + 1}</td>

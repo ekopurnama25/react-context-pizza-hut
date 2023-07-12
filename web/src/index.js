@@ -4,11 +4,11 @@ import App from "./App";
 import "./index.css";
 import setupInterceptors from "./utils/setupInterceptor";
 
+setupInterceptors();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-setupInterceptors();

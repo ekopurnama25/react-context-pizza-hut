@@ -58,7 +58,7 @@ const AddMenuUsersPages = () => {
               placeholder="Jenis Pizza"
               name="jenis_pizza"
               onChange={handleChange}
-              value={menupizza.jenis_pizza}
+              value={menupizza.jenis_pizza || ""}
             />
           </div>
           <div>
@@ -68,7 +68,7 @@ const AddMenuUsersPages = () => {
               placeholder="Jumlah Pizza"
               name="qty"
               onChange={handleChange}
-              value={menupizza.qty}
+              value={menupizza.qty || ""}
             />
           </div>
           <div>
@@ -78,7 +78,7 @@ const AddMenuUsersPages = () => {
               placeholder="Harga Pizza"
               name="harga_pizza"
               onChange={handleChange}
-              value={menupizza.harga_pizza}
+              value={menupizza.harga_pizza || ""}
             />
           </div>
           <div>
@@ -100,7 +100,7 @@ const AddMenuUsersPages = () => {
               placeholder="Deskription Pizza"
               name="desc_pizza"
               onChange={handleChange}
-              value={menupizza.desc_pizza}
+              value={menupizza.desc_pizza || ""}
             />
           </div>
           <div style={{ marginLeft: "47%", marginTop: "15px" }}>
